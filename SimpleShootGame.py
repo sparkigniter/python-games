@@ -1,5 +1,5 @@
 import random
-import turtle as t
+import turtle as t  # import python turtle library
 
 winWidth = 800
 winHeight = 600
@@ -10,7 +10,7 @@ window = t.Screen()
 window.title("Shooting Game")
 window.bgcolor("green")
 window.setup(width=winWidth, height=winHeight)
-window.tracer(0)
+window.tracer(False)
 
 # Creating the shooter
 shooter = t.Turtle()
@@ -80,9 +80,9 @@ while True:
         y = bullet.ycor()
         y = y + 0.5
         bullet.sety(y)
-        if bullet.distance(enemy) < 10:
+        if bullet.distance(enemy) < 20:
             bullet.hideturtle()
-            enemy.goto(0, (winHeight / 2) + 1)
+            enemy.goto(0, (winHeight / 2) + 10)
             isShot = False
             score += 1
 
